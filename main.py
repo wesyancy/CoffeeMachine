@@ -1,35 +1,4 @@
-MENU = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
-        },
-        "cost": 1.5,
-    },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
-        },
-        "cost": 2.5,
-    },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
-        },
-        "cost": 3.0,
-    }
-}
-
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-    "money": 0.00,
-}
+from data import MENU, resources
 
 
 # TODO 1: Create a function that prints report showing current resources
@@ -142,7 +111,7 @@ def make_coffee():
 
     while keep_brewing:
         if (resources['water'] < 50) or (resources['coffee'] < 18):
-            print("Not enough resources to make any more drinks, goodbye.")
+            print("Not enough resources to make any more drinks.")
             keep_brewing = False
 
         selection = input("What would you like? (espresso/latte/cappuccino): ").lower()
